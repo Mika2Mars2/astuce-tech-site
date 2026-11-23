@@ -1,0 +1,28 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion TikTok — Astuce Tech Auto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <strong>⚡ Astuce Tech Auto</strong>
+  </header>
+  <main>
+    <h1>Connexion TikTok</h1>
+    <p id="status">Vérification du retour de TikTok...</p>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("status").textContent =
+      params.has("error")
+        ? "La connexion TikTok a été refusée ou interrompue."
+        : params.has("code")
+          ? "Autorisation reçue. La connexion doit encore être finalisée."
+          : "Aucune autorisation TikTok reçue.";
+  </script>
+</body>
+</html>
